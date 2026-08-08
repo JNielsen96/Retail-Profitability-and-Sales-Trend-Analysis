@@ -1,22 +1,23 @@
 <h1> Data Carpentry: Cleaning and filtering receipts</h1>
 
- ### [YouTube Demonstration](https://youtu.be/7eJexJVCqJo)
 
 <h2>Description</h2>
-Project consists of a simple PowerShell script that walks the user through "zeroing out" (wiping) any drives that are connected to the system. The utility allows you to select the target disk and choose the number of passes that are performed. The PowerShell script will configure a diskpart script file based on the user's selections and then launch Diskpart to perform the disk sanitization.
+A Python script that parses unstructured, plain-text point-of-sale receipts and converts them into a structured JSON-style dictionary. The parser uses dynamically-built regex patterns to extract business details, cashier/customer info, itemised products (with quantity and per-unit price reconstruction), promotions/discounts, split payment methods, and transaction metadata (terminal, reference, GST, total). It's built as a single-pass, line-by-line state machine that tracks context (e.g. whether it's currently inside the "Payments" block, or buffering a product line waiting for its price) to correctly reconstruct multi-line records, then re-orders the output keys to match a required schema. 
 <br />
 
 
 <h2>Languages and Utilities Used</h2>
 
-- <b>PowerShell</b> 
-- <b>Diskpart</b>
+- <b>Python</b> 
+- <b>json</b>
+- <b>io / textwrap / itertools (test harness utilities)</b>
+
 
 <h2>Environments Used </h2>
 
-- <b>Windows 10</b> (21H2)
+- <b>Windows 11</b>
 
-<h2>Program walk-through:</h2>
+<h2>Walk-through:</h2>
 
 <p align="center">
 Launch the utility: <br/>
