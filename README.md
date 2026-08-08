@@ -1,1 +1,1 @@
-# Data-Carpentry-cleaning-and-filtering-data-work-
+# Data Carpentry: Cleaning and filtering receipts
