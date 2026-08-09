@@ -18,6 +18,7 @@ A data analysis project exploring transactional receipt data (aggregated from th
 <h2>Environments Used </h2>
 
 - <b>Windows 11</b>
+- <b>Excel</b>
 
 <h2>Results:</h2>
 
