@@ -1,59 +1,40 @@
-<h1> Data Carpentry: Cleaning and filtering receipts</h1>
+<h1> Data Carpentry: Retail Profitability & Sales Trend Analysis</h1>
 
 
 <h2>Description</h2>
-A Python script that parses unstructured, plain-text point-of-sale receipts and converts them into a structured JSON-style dictionary. The parser uses dynamically-built regex patterns to extract business details, cashier/customer info, itemised products (with quantity and per-unit price reconstruction), promotions/discounts, split payment methods, and transaction metadata (terminal, reference, GST, total). It's built as a single-pass, line-by-line state machine that tracks context (e.g. whether it's currently inside the "Payments" block, or buffering a product line waiting for its price) to correctly reconstruct multi-line records, then re-orders the output keys to match a required schema. 
+A data analysis project exploring transactional receipt data (aggregated from the receipt parser project) across two businesses over multiple years. Raw JSON receipts are loaded and flattened into a single tidy DataFrame, then used to answer three business-focused questions: (1) total profit per business per year, (2) the most profitable product per business per year, and (3) the most popular product by sales volume per business per year. Each analysis includes a written discussion interpreting the trends found, including a sharp profit decline and a product-mix shift for one business in 2025, and comparing diversified vs. concentrated profit drivers between the two businesses. 
 <br />
 
 
 <h2>Languages and Utilities Used</h2>
 
 - <b>Python</b> 
+- <b>pandas</b>
+- <b>os / glob</b>
 - <b>json</b>
-- <b>io / textwrap / itertools (test harness utilities)</b>
+- <b>tabulate</b>
 
 
 <h2>Environments Used </h2>
 
 - <b>Windows 11</b>
 
-<h2>Walk-through:</h2>
+<h2>Results:</h2>
 
 <p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Receipts Data Table: <br/>
+<img src="https://i.imgur.com/vzh0mVO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Profit per business per year:  <br/>
+<img src="https://i.imgur.com/BRq8xDv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Most profitable product per business per year: <br/>
+<img src="https://i.imgur.com/0q0Zfb6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Most popular product per business per year (by quantity sold):  <br/>
+<img src="https://i.imgur.com/EdzzgAY.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-<br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
 
-<!--
- ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
---!>
